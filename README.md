@@ -1,24 +1,35 @@
-# README
+# Github Jobs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A very simple api mirror for https://jobs.github.com/positions.json
 
-Things you may want to cover:
+## Clonning & Installing
+`Ruby 2.6.3`
+`Rails 5.2.2.1`
 
-* Ruby version
+```bash
+$ git@github.com:gkpacker/github_jobs.git
+$ cd github_jobs
+$ bundle install
+$ bin/rails db:create db:migrate
+```
 
-* System dependencies
+## Loading Jobs
 
-* Configuration
+Max n of pages is set to 3. Pagination starts by default at 0.
+Stores only the job description and location.
+```bash
+$ bin/rails c
+```
+To load jobs until the fourth page
+```rb
+irb(main):001:0> Loaders::Jobs.new.load!
+```
 
-* Database creation
+## Starting the server
 
-* Database initialization
+```bash
+$ bin/rails s
+```
 
-* How to run the test suite
+and open http://localhost:3000/api/v1/jobs to see stored jobs from github jobs
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
