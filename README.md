@@ -18,7 +18,7 @@ $ bin/rails db:create db:migrate
 Max n of pages is set to 3. Pagination starts by default at 0.
 Stores only the job description and location.
 ```bash
-$ bin/rails c
+$ bin/rails console
 ```
 To load jobs until the fourth page
 ```rb
@@ -28,7 +28,7 @@ irb(main):001:0> Loaders::Jobs.new.load!
 ## Starting the server
 
 ```bash
-$ bin/rails s
+$ bin/rails server
 ```
 
 and open http://localhost:3000/api/v1/jobs to see stored jobs from github jobs
