@@ -24,6 +24,10 @@ To load jobs until the fourth page
 ```rb
 irb(main):001:0> Loaders::Jobs.new.load!
 ```
+You can filter by city:
+```rb
+irb(main):001:0> Loaders::Jobs.new(location: 'sp').load!
+```
 
 ## Starting the server
 
