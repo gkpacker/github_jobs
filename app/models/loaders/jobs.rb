@@ -2,8 +2,8 @@ module Loaders
   class Jobs
     attr_reader :connector
 
-    def initialize(connector = Connectors::Jobs.new(location: 'ny'))
-      @connector = connector
+    def initialize(params = { location: 'ny' }, connector = Connectors::Jobs)
+      @connector = connector.new(location: params[:location])
     end
 
     def load!
